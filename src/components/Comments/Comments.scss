@@ -1,0 +1,75 @@
+.form {
+    &__wrapper {
+        background-color: #888889;
+        border-radius: 10px;
+        width: 100%;
+        height: 95px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        color: #fff;
+    }
+    &__textarea {
+        resize: none;
+        width: 85%;
+        
+        padding: 12px;
+        background-color: #606365;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+
+
+    }
+
+    &__submit {
+        margin-right: 6px;
+    }
+}
+
+.comment {
+    background: #606365;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    // overflow: hidden;
+
+    &__info {
+        display: flex;
+        font-size: 15px;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+    &__author {
+        margin-right: 20px;
+      }
+    &__date {
+        font-weight: 200;
+      }
+      
+    &__body {
+        max-height: 200px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        padding-right: 5px;
+      }
+    &__body {
+        position: relative;
+      }
+  }
+  .comment:last-child {
+    margin-bottom: 5px;
+  }
+  
+  .delete__button {
+    position: absolute;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    background: #c4c4c4;
+    border-radius: 5px;
+    top: 0px;
+    right: 0px;
+  }
