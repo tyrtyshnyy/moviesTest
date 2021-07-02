@@ -3,15 +3,8 @@ import {createStore, applyMiddleware, compose} from "redux";
 import thunk from "redux-thunk";
 
 import reducer from "./reducers/reducer";
-import comments from './reducers/comments'
 
 
-
-import {loadState, saveState} from './localStorage'
-import {throttle} from 'lodash'
-
-
-const persistedState = loadState()
 const rootReducer= combineReducers({
     films: reducer,
    
@@ -20,17 +13,9 @@ const rootReducer= combineReducers({
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 export const store = createStore(
     rootReducer,
-    persistedState,
     composeEnhancers(applyMiddleware(thunk),
     )) 
     
-    
-
-// store.subscribe(throttle(() => {
-//     saveState(
-//     store.getState().comments
-//     );
-//   }, 1000));
 
     
 

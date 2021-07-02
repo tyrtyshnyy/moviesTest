@@ -81,4 +81,39 @@
     }
 }
 
-
+.link {
+    color: #fff;;
+  }
+  
+.cart {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12.5px;
+}
+  
+@media (max-width: 900px) {
+    .film__img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+    .film__info {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .film__info-title {
+      font-size: 35px;
+    }
+    .link {
+        font-size: 20px;
+    }
+    .film__info-synonpsis {
+      font-size: 18px;
+      text-align: justify;
+      line-height: 1.35;
+    }
+  }
+  

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {setItems, setIsFetching, setFetchingError, setCurrentPage, setIsLoadedMovie} from '../reducers/reducer'
+import {setItems, setIsFetching, setIsLoadedMovie} from '../reducers/reducer'
 
 export const  getFilms = (currentPage = 6, perPage) => {
    

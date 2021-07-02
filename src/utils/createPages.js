@@ -3,13 +3,13 @@ export function createPages(pages, pagesCount, currentPage) {
         if(currentPage > 2) {
             for (let i = currentPage-1; i <= currentPage+1; i++) {
                 pages.push(i)
-                if(i == pagesCount) break
+                if(i === pagesCount) break
             }
         }
         else {
             for (let i = 1; i <= 3; i++) {
                 pages.push(i)
-                if(i == pagesCount) break
+                if(i === pagesCount) break
             }
         }
     }  else {

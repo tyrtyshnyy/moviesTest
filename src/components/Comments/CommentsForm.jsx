@@ -1,68 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
-import { setCurrentMovieComment, setFirstComment } from '../../redux/reducers/comments'
+import { useSelector } from 'react-redux'
+
 import Comments from './Comments'
 
-
-
 function CommentsForm() {
-    const dispatch = useDispatch()
-
-    
 
     const { currentMovie } = useSelector((state) => state.films)
     const filmId = currentMovie.id
-
- 
-    const [textarea, setTextArea] = React.useState('')
-
     const textareaRef = React.useRef(null);
 
     React.useEffect(() => {
         textareaRef.current.focus();
     });
-
-    const handleChange = e => {
-        setTextArea(e.target.value);
-    };
-
-
-
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-
-    //     let currentMovieComments = comments.find(
-    //         (comment) => comment.filmId === currentMovie.id
-    //     )
-
-    //     console.log(currentMovieComments)
-    //     dispatch(setCurrentMovieComment
-    //         ( {
-    //                 id: Math.floor(Math.random() * 10000),
-    //                 text: textarea,
-    //                 date: new Date().toLocaleDateString(),
-    //                 author: 'You'
-    //             },
-    //             currentMovieComments
-    //         ))
-
-    //     dispatch(setFirstComment
-    //         ({
-    //             filmId: currentMovie.id,
-    //             commenty: [{
-    //                 id: Math.floor(Math.random() * 10000),
-    //                 text: textarea,
-    //                 date: new Date().toLocaleDateString(),
-    //                 author: 'You'
-    //             }]
-    //         }))
-
-
-
-
-    //     setTextArea('');
-    // }
 
     function getComments(filmId) {
         // массив всех комментариев по фильмам
@@ -139,13 +89,8 @@ function CommentsForm() {
         setComments(currentMovieComments || null);
       }, []);
 
-
-      
-
-
     return (
-
-        <>
+        <Fragment>
             <div className="comment__body">
             {comments
           ? comments.comments.map((comment) => (
@@ -175,7 +120,7 @@ function CommentsForm() {
             </form>
 
 
-        </>
+        </Fragment>
     )
 }
 

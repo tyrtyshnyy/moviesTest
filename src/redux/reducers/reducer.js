@@ -9,7 +9,7 @@ const SET_IS_LOADED_MOVIE = 'SET_IS_LOADED_MOVIE'
 const initialState = {
     items: [],
     isFetching: true,
-    currentPage: 5, //текущая страница
+    currentPage: 1, //текущая страница
     perPage: 20, // сколько номеров отображать
     totalCount: 0, // кол-во репозитопиев
     isFetchingError: false,
