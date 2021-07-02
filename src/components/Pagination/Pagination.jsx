@@ -1,9 +1,9 @@
 import React from 'react'
 import './Pagination.scss'
 
-function Pagination({children, onClick, className}) {
+function Pagination({ children, onClick, className }) {
     return (
-        <button onClick={onClick}  className={className}>{children}</button>
+        <button onClick={onClick} className={className}>{children}</button>
     )
 }
 

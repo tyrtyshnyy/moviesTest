@@ -1,11 +1,8 @@
 .nav {
-
-
     &__link {
-      
         padding: 5px 25px;
         border-radius: 23px;
-        color: #299DED;
+        color: #299ded;
         background-color: #303539;
         font-size: 25px;
         margin-right: 11px;
@@ -15,10 +12,8 @@
     &__link:last-child {
         margin-right: 0;
     }
- 
- 
- }
- 
- .active {
-     color:#606365;
- }
+}
+
+.active {
+    color: #606365;
+}

@@ -5,7 +5,6 @@ const SET_FETCH_ERROR = 'SET_FETCH_ERROR'
 const SET_CURRENT_MOVIE = 'SET_CURRENT_MOVIE'
 const SET_IS_LOADED_MOVIE = 'SET_IS_LOADED_MOVIE'
 
-
 const initialState = {
     items: [],
     isFetching: true,
@@ -15,20 +14,20 @@ const initialState = {
     isFetchingError: false,
     currentMovie: null,
     isLoadedMovie: false
-
 }
+
 function reducer(state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
         case SET_ITEMS: {
-           return {
-            ...state, 
-            items: action.payload.data,
-            isFetching: true,
-            totalCount: action.payload.data.movie_count,
-            isLoadedMovie: true
-           } 
+            return {
+                ...state,
+                items: action.payload.data,
+                isFetching: true,
+                totalCount: action.payload.data.movie_count,
+                isLoadedMovie: true
+            }
         }
-        
+
         case SET_IS_FETCHING: {
             return {
                 ...state,
@@ -58,7 +57,7 @@ function reducer(state = initialState, action) {
         case SET_IS_LOADED_MOVIE: {
             return {
                 ...state,
-               isLoadedMovie: action.payload
+                isLoadedMovie: action.payload
             }
         }
 
@@ -70,12 +69,11 @@ function reducer(state = initialState, action) {
 
 export default reducer
 
-
-export const setItems = (items) => ({ type: SET_ITEMS, payload: items})
-export const setIsFetching = (bool) => ({ type: SET_IS_FETCHING, payload: bool})
-export const setCurrentPage = (items) => ({ type: SET_CURRENT_PAGE, payload: items})
-export const setFetchingError = (items) => ({ type: SET_FETCH_ERROR, payload: items})
-export const setCurrentMovie = (items) => ({ type: SET_CURRENT_MOVIE, payload: items})
-export const setIsLoadedMovie = (items) => ({ type: SET_IS_LOADED_MOVIE, payload: items})
+export const setItems = (items) => ({ type: SET_ITEMS, payload: items })
+export const setIsFetching = (bool) => ({ type: SET_IS_FETCHING, payload: bool })
+export const setCurrentPage = (items) => ({ type: SET_CURRENT_PAGE, payload: items })
+export const setFetchingError = (items) => ({ type: SET_FETCH_ERROR, payload: items })
+export const setCurrentMovie = (items) => ({ type: SET_CURRENT_MOVIE, payload: items })
+export const setIsLoadedMovie = (items) => ({ type: SET_IS_LOADED_MOVIE, payload: items })
 
 

@@ -1,22 +1,24 @@
-import React, { Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import './Cart.scss'
-import { useSelector } from 'react-redux'
 import { NavLink, Link } from 'react-router-dom'
-import CommentsForm from '../../components/Comments/CommentsForm'
 
+import Spinner from '../../components/Spinner/Spinner'
+import CommentsForm from '../../components/Comments/CommentsForm'
 import Header from '../../components/Header/Header'
 
+import { getCurrentMovie } from '../../redux/actionAsync/films'
+import { useSelector, useDispatch } from 'react-redux'
 
-
-function Cart() {
-    
-
+function Cart(props) {
+    const dispatch = useDispatch()
     const { currentMovie } = useSelector((state) => state.films)
+    useEffect(() => {
+        const id = props.match.params.id;
+        dispatch(getCurrentMovie(id));
+    }, []);
 
     return (
-
         <Fragment>
-
             {currentMovie ?
                 <div>
                     <Header
@@ -26,8 +28,6 @@ function Cart() {
                             <path d="M16.8717 7.71655H0.980906C0.439125 7.71655 0 8.15563 0 8.69746C0 9.23924 0.439125 9.67837 0.980906 9.67837H16.8717C19.7206 9.67837 22.0382 11.9959 22.0382 14.8445C22.0382 17.6931 19.7206 20.0106 16.8717 20.0106H2.28881C1.74703 20.0106 1.30791 20.4498 1.30791 20.9916C1.30791 21.5333 1.74703 21.9725 2.28881 21.9725H16.8717C20.8019 21.9725 24 18.7747 24 14.8445C24 10.9143 20.8022 7.71655 16.8717 7.71655Z" fill="white" />
                         </svg>
                         </button></NavLink>} />
-
-
                     <div className="container">
                         <div className="more" >
                             <div className="film">
@@ -44,7 +44,6 @@ function Cart() {
                                                 </clipPath>
                                             </defs>
                                         </svg>
-
                                         {currentMovie.rating}
                                     </div>
                                 </div>
@@ -55,28 +54,19 @@ function Cart() {
                                         {currentMovie.genres.map((i, index) => <><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="6.5" cy="6.5" r="6.5" fill="#606365" />
                                         </svg>
-
                                             <span key={index} className="film__info-genres">{i}</span> </>)}
                                     </>
-
                                     <p className="film__info-synonpsis">Synonpsis</p>
-                                    <div className="film__info-description">{currentMovie.synopsis}</div>
-
+                                    <div className="film__info-description">{currentMovie.description_intro}</div>
                                     <p className="film__info-synonpsis">Comments</p>
-                                    {/* тут должен выводиться оставвленный коммент  */}
-                                    <CommentsForm filmId={currentMovie.id}/>
+                                    <CommentsForm filmId={currentMovie.id} />
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
                 :
-                <div className="spin-wrapper">
-                    <div className="spinner">
-                    </div>
-                </div>
+                <Spinner />
             }
         </Fragment>
     )
