@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Img({img, preloader}) {
     const [isLoaded, setIsLoaded] = React.useState(false);
@@ -13,3 +14,8 @@ function Img({img, preloader}) {
 }
 
 export default Img
+
+Img.propTypes = {
+  img: PropTypes.string,
+  preloader: PropTypes.string
+}

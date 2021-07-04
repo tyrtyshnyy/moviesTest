@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Header.scss'
 
 function Header({ title, nav }) {
@@ -16,3 +17,8 @@ function Header({ title, nav }) {
 }
 
 export default Header
+
+Header.propTypes = {
+  title: PropTypes.any,
+  nav: PropTypes.any
+}

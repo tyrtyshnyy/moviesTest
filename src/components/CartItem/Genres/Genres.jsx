@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function index({genre, className}) {
+function Genres({genre, className}) {
     return (
         <span className={className}>
         {genre} <br/>
@@ -8,4 +9,9 @@ function index({genre, className}) {
     )
 }
 
-export default index
+export default Genres
+
+Genres.propTypes = {
+    genre: PropTypes.string,
+    className: PropTypes.string
+}

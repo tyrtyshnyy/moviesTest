@@ -51,10 +51,12 @@ function Cart(props) {
                                     <p className="film__info-title">{currentMovie.title_english}</p>
                                     <p className="film__info-year">{currentMovie.year}</p>
                                     <>
-                                        {currentMovie.genres.map((i, index) => <><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="6.5" cy="6.5" r="6.5" fill="#606365" />
-                                        </svg>
-                                            <span key={index} className="film__info-genres">{i}</span> </>)}
+                                        {currentMovie.genres.map((i, index) =>
+                                            <>
+                                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="6.5" cy="6.5" r="6.5" fill="#606365" />
+                                                </svg>
+                                                <span key={index} className="film__info-genres">{i}</span> </>)}
                                     </>
                                     <p className="film__info-synonpsis">Synonpsis</p>
                                     <div className="film__info-description">{currentMovie.description_intro}</div>

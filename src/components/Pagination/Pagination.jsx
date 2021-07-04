@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Pagination.scss'
 
 function Pagination({ children, onClick, className }) {
@@ -8,3 +9,9 @@ function Pagination({ children, onClick, className }) {
 }
 
 export default Pagination
+
+Pagination.propTypes = {
+    children: PropTypes.number,
+    onClick: PropTypes.func,
+    className: PropTypes.string
+}

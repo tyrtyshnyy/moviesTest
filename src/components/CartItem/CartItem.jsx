@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './CartItem.scss'
 import preloader from '../../assets/img/preloader.png'
 
@@ -60,3 +61,15 @@ function CartItem({ movies }) {
 }
 
 export default CartItem
+
+
+CartItem.propTypes = {
+  movies: PropTypes.shape({
+    id: PropTypes.number,
+    rating: PropTypes.number,
+    genres: PropTypes.array,
+    large_cover_image: PropTypes.string,
+    title_english: PropTypes.string,
+    year: PropTypes.number
+  })
+}
